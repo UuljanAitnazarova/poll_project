@@ -15,7 +15,3 @@ class ChoiceForm(forms.ModelForm):
         fields = ['option']
 
 
-class AnswerForm(forms.ModelForm):
-    class Meta:
-        model = Answer
-        fields = ['option']

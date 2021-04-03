@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect, render
 
 from poll_app.models import Poll, Choice, Answer
-from poll_app.forms import PollForm, AnswerForm
+from poll_app.forms import PollForm
 
 class PollListView(ListView):
     model = Poll
@@ -25,7 +25,15 @@ class PollChoicesView(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['poll'] = self.poll
+        context['counter'] = self.statistics()
         return context
+
+    def statistics(self):
+        counter = 0
+        for i in self.poll.answers.all():
+            counter += 1
+        return counter
+
 
 class PollCreateView(CreateView):
     model = Poll
@@ -65,9 +73,18 @@ class SelectAnswerView(TemplateView):
 
     def post(self, request, *args, **kwargs):
         poll = get_object_or_404(Poll, pk=self.kwargs['pk'])
-        option = get_object_or_404(Choice, pk=request.POST['action'])
-        answer = Answer.objects.create(poll=poll, option=option)
+        try:
+            option = get_object_or_404(Choice, pk=request.POST['action'])
+            answer = Answer.objects.create(poll=poll, option=option)
+        except:
+            return redirect('select_answer', pk=self.kwargs['pk'])
         return redirect('poll_list')
+
+
+
+
+
+
 
 
 
