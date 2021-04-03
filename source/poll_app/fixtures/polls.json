@@ -1,0 +1,114 @@
+[
+{
+  "model": "poll_app.poll",
+  "pk": 1,
+  "fields": {
+    "question": "Which programming language do you study?",
+    "created_at": "2021-04-03T05:58:39.303Z"
+  }
+},
+{
+  "model": "poll_app.poll",
+  "pk": 2,
+  "fields": {
+    "question": "Where do you want to relocate?",
+    "created_at": "2021-04-03T06:00:06.321Z"
+  }
+},
+{
+  "model": "poll_app.poll",
+  "pk": 3,
+  "fields": {
+    "question": "What is your current status?",
+    "created_at": "2021-04-03T06:01:45.266Z"
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 1,
+  "fields": {
+    "option": "Python",
+    "poll": 1
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 2,
+  "fields": {
+    "option": "Java",
+    "poll": 1
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 3,
+  "fields": {
+    "option": "Ruby",
+    "poll": 1
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 4,
+  "fields": {
+    "option": "Javascript",
+    "poll": 1
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 5,
+  "fields": {
+    "option": "USA",
+    "poll": 2
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 6,
+  "fields": {
+    "option": "Canada",
+    "poll": 2
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 7,
+  "fields": {
+    "option": "UK",
+    "poll": 2
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 8,
+  "fields": {
+    "option": "Student",
+    "poll": 3
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 9,
+  "fields": {
+    "option": "Part-time employed",
+    "poll": 3
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 10,
+  "fields": {
+    "option": "Full-time employed",
+    "poll": 3
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 11,
+  "fields": {
+    "option": "Unemployed",
+    "poll": 3
+  }
+}
+]
