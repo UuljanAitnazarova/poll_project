@@ -13,6 +13,7 @@
         <div class="card-body" >
             <h5 class="card-title">{{ poll.question }}</h5>
             <a href="{% url 'poll_detail' poll.pk %}" class="btn" style="background-color: darkmagenta; color: #dddddd">View details</a>
+            <a href="{% url 'select_answer' poll.pk %}" class="btn" style="background-color: darkmagenta; color: #dddddd">Select an Answer</a>
         </div>
     </div>
     {% endfor %}

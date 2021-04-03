@@ -22,5 +22,8 @@ class Answer(models.Model):
     option = models.ForeignKey('poll_app.Choice', related_name='answers', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.poll} - {self.option}'
+
 
 

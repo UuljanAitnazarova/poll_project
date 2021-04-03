@@ -1,9 +1,10 @@
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic.base import TemplateView
 from django.urls import reverse
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect, render
 
-from poll_app.models import Poll, Choice
-from poll_app.forms import PollForm
+from poll_app.models import Poll, Choice, Answer
+from poll_app.forms import PollForm, AnswerForm
 
 class PollListView(ListView):
     model = Poll
@@ -12,11 +13,6 @@ class PollListView(ListView):
     ordering = ['-created_at']
     paginate_by = 5
     paginate_orphans = 1
-
-# class PollDetailView(DetailView):
-#     model = Poll
-#     template_name = 'poll/detail.html'
-#     context_object_name = 'poll'
 
 class PollChoicesView(ListView):
     template_name = 'poll/detail.html'
@@ -56,6 +52,24 @@ class PollDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse('poll_list')
+
+
+class SelectAnswerView(TemplateView):
+    template_name = 'answers.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['poll'] = get_object_or_404(Poll, pk=self.kwargs['pk'])
+        return context
+
+
+    def post(self, request, *args, **kwargs):
+        poll = get_object_or_404(Poll, pk=self.kwargs['pk'])
+        option = get_object_or_404(Choice, pk=request.POST['action'])
+        answer = Answer.objects.create(poll=poll, option=option)
+        return redirect('poll_list')
+
+
 
 
 

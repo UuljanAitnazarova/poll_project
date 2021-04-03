@@ -11,7 +11,7 @@
         <a class="nav-link" href="{% url 'choice_create' poll.pk %}">Create new choice</a>
     </li>
         <li class="nav-item">
-        <a class="nav-link" href="">ANSWER TO THIS POLL</a>
+        <a class="nav-link" href="{% url 'select_answer' poll.pk %}">Select an Answer</a>
     </li>
 {% endblock nav %}
 

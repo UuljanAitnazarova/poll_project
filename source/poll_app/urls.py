@@ -9,6 +9,7 @@ from poll_app.views import (
                             ChoiceCreateView,
                             ChoiceUpdateView,
                             ChoiceDeleteView,
+                            SelectAnswerView,
 )
 
 urlpatterns = [
@@ -20,4 +21,5 @@ urlpatterns = [
     path('<int:pk>/choices/create/', ChoiceCreateView.as_view(), name='choice_create'),
     path('choices/<int:pk>/update', ChoiceUpdateView.as_view(), name='choice_update'),
     path('choices/<int:pk>/delete', ChoiceDeleteView.as_view(), name='choice_delete'),
+    path('<int:pk>/select', SelectAnswerView.as_view(), name='select_answer')
 ]
