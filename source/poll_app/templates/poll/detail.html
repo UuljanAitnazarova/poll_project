@@ -8,7 +8,7 @@
         <a class="nav-link" href="{% url 'poll_delete' poll.pk %}">Delete Poll</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="">Create new option</a>
+        <a class="nav-link" href="{% url 'choice_create' poll.pk %}">Create new choice</a>
     </li>
 {% endblock nav %}
 
@@ -16,12 +16,21 @@
     <div class="card text-center" style="margin-top: 40px; background-color: darkmagenta; color: white;">
         <div class="card-body">
             <h3 class="card-title">{{ poll.question }}</h3>
-{#            <a href="#" class="btn btn-primary">Go somewhere</a>#}
-{#            <a href="#" class="btn btn-primary">Go somewhere</a>#}
         </div>
         <div class="card-footer text-muted">
             Created at: {{ poll.created_at }}
         </div>
     </div>
+
+    {% for choice in choices %}
+        <div class="card">
+            <div class="card-body">
+            <p>{{ choice.option }}</p>
+                <a href="{% url 'choice_update' choice.pk %}" class="btn btn-secondary">Update</a>
+            <a href="{% url 'choice_delete' choice.pk %}" class="btn btn-secondary">Delete</a>
+            </div>
+
+        </div>
+    {% endfor %}
 
 {% endblock %}
