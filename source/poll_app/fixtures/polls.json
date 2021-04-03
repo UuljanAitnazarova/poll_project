@@ -24,6 +24,38 @@
   }
 },
 {
+  "model": "poll_app.poll",
+  "pk": 4,
+  "fields": {
+    "question": "Which educational platform do you prefer?",
+    "created_at": "2021-04-03T06:33:03.465Z"
+  }
+},
+{
+  "model": "poll_app.poll",
+  "pk": 5,
+  "fields": {
+    "question": "Do you study algorithms and data structures?",
+    "created_at": "2021-04-03T06:49:54.556Z"
+  }
+},
+{
+  "model": "poll_app.poll",
+  "pk": 6,
+  "fields": {
+    "question": "How many years of experience do you have?",
+    "created_at": "2021-04-03T06:51:07.010Z"
+  }
+},
+{
+  "model": "poll_app.poll",
+  "pk": 7,
+  "fields": {
+    "question": "What is the area of your expertise?",
+    "created_at": "2021-04-03T06:51:40.081Z"
+  }
+},
+{
   "model": "poll_app.choice",
   "pk": 1,
   "fields": {
@@ -109,6 +141,134 @@
   "fields": {
     "option": "Unemployed",
     "poll": 3
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 12,
+  "fields": {
+    "option": "Fintech",
+    "poll": 7
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 13,
+  "fields": {
+    "option": "ML",
+    "poll": 7
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 14,
+  "fields": {
+    "option": "Web development",
+    "poll": 7
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 15,
+  "fields": {
+    "option": "IOS Development",
+    "poll": 7
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 16,
+  "fields": {
+    "option": "no experience",
+    "poll": 6
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 17,
+  "fields": {
+    "option": "Less than a year",
+    "poll": 6
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 18,
+  "fields": {
+    "option": "From 1 -3 years",
+    "poll": 6
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 19,
+  "fields": {
+    "option": "More than 3 years",
+    "poll": 6
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 20,
+  "fields": {
+    "option": "More than 10 years",
+    "poll": 6
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 21,
+  "fields": {
+    "option": "Coursera",
+    "poll": 4
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 22,
+  "fields": {
+    "option": "EdX",
+    "poll": 4
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 23,
+  "fields": {
+    "option": "Udemy",
+    "poll": 4
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 24,
+  "fields": {
+    "option": "Udacity",
+    "poll": 4
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 25,
+  "fields": {
+    "option": "Yes",
+    "poll": 5
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 26,
+  "fields": {
+    "option": "No",
+    "poll": 5
+  }
+},
+{
+  "model": "poll_app.choice",
+  "pk": 27,
+  "fields": {
+    "option": "No, but I plan to study",
+    "poll": 5
   }
 }
 ]

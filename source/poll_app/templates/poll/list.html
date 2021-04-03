@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" style="color: #dddddd" href="{% url 'poll_create'  %}">New Poll</a>
+    </li>
+{% endblock nav %}
+
+
+{% block content %}
+    {% for poll in polls %}
+    <div class="card text-center" style="margin-top: 30px">
+        <div class="card-body" >
+            <h5 class="card-title">{{ poll.question }}</h5>
+            <a href="{% url 'poll_detail' poll.pk %}" class="btn" style="background-color: darkmagenta; color: #dddddd">View details</a>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
+{% endblock %}

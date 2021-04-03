@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'poll_update' poll.pk %}">Update Poll</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'poll_delete' poll.pk %}">Delete Poll</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="">Create new option</a>
+    </li>
+{% endblock nav %}
+
+{% block content %}
+    <div class="card text-center" style="margin-top: 40px; background-color: darkmagenta; color: white;">
+        <div class="card-body">
+            <h3 class="card-title">{{ poll.question }}</h3>
+{#            <a href="#" class="btn btn-primary">Go somewhere</a>#}
+{#            <a href="#" class="btn btn-primary">Go somewhere</a>#}
+        </div>
+        <div class="card-footer text-muted">
+            Created at: {{ poll.created_at }}
+        </div>
+    </div>
+
+{% endblock %}
